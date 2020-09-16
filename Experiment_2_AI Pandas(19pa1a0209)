@@ -1,0 +1,1958 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled",
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyPAq9sD9jSL0aiYAFfTlmM8",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/19pa1a0209/AI-lab/blob/master/Experiment_2_AI%20Pandas(19pa1a0209)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wl-bMW3cALil",
+        "colab_type": "text"
+      },
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ddPz9-saAO0N",
+        "colab_type": "text"
+      },
+      "source": [
+        "#PANDAS Experiment-*2*"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qFUWIsJwAWC8",
+        "colab_type": "text"
+      },
+      "source": [
+        "##1)Create a Dataframe manually"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "W4fjdCGlCnj8",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n"
+      ],
+      "execution_count": 56,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "E94MRCUhZ73z",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 136
+        },
+        "outputId": "4628dc70-8e79-4586-b552-7f36efd8e3ea"
+      },
+      "source": [
+        "df=pd.DataFrame({\"Roll No\":[\"EEE209\",\"EEE227\",\"EEE222\"],\"Name\":[\"B.Sravani\",\"G.Swathi\",\"D.Jyothi\"]})\n",
+        "df"
+      ],
+      "execution_count": 57,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Name</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>EEE209</td>\n",
+              "      <td>B.Sravani</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>EEE227</td>\n",
+              "      <td>G.Swathi</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>EEE222</td>\n",
+              "      <td>D.Jyothi</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "  Roll No       Name\n",
+              "0  EEE209  B.Sravani\n",
+              "1  EEE227   G.Swathi\n",
+              "2  EEE222   D.Jyothi"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 57
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "NJdbpZUsEDv6",
+        "colab_type": "text"
+      },
+      "source": [
+        "##2)Import data into a Data Frame"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pYq9c5iyELty",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 212
+        },
+        "outputId": "c38b1a31-628a-46f2-9352-7b732c5adf10"
+      },
+      "source": [
+        "df=pd.read_csv(\"/students_placement_data.csv\")\n",
+        "df.head()"
+      ],
+      "execution_count": 58,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>registered_for_ Placement_Training</th>\n",
+              "      <th>placement status</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.3</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>NO</td>\n",
+              "      <td>Not placed</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Placed</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Not placed</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.0</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Not placed</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Not placed</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... registered_for_ Placement_Training  placement status\n",
+              "0        1      M  ...                                 NO        Not placed\n",
+              "1        2      F  ...                                yes            Placed\n",
+              "2        3      F  ...                                yes        Not placed\n",
+              "3        4      M  ...                                yes        Not placed\n",
+              "4        5      M  ...                                yes        Not placed\n",
+              "\n",
+              "[5 rows x 9 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 58
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hbjlwYPdQ0QV",
+        "colab_type": "text"
+      },
+      "source": [
+        "3)Adding,Deleting,Modifying the rows/columns in a dataframe. 3.1) Adding a column"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MmIZ5rObSidp",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "4a049256-1a83-4e79-fedd-c1ecca2eb89e"
+      },
+      "source": [
+        "host_day=pd.read_csv(\"/hostlers_day_scholars.csv\")\n",
+        "host_day.head()"
+      ],
+      "execution_count": 59,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>hostler/days scholar</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>h</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "  hostler/days scholar\n",
+              "0                    d\n",
+              "1                    d\n",
+              "2                    d\n",
+              "3                    d\n",
+              "4                    h"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 59
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bjy1VdnfhDGa",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "f91bf823-151e-4f44-cd8d-f12c7a6b9a4f"
+      },
+      "source": [
+        "host_day.shape"
+      ],
+      "execution_count": 60,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(117, 1)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 60
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xjt_8XLfhOD9",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "208456f9-a161-4b03-a3bd-65a4f99af669"
+      },
+      "source": [
+        "df[\"/hostlers_day_scholars.csv\"]=host_day.values\n",
+        "df.head()"
+      ],
+      "execution_count": 61,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>registered_for_ Placement_Training</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.3</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>NO</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.0</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>yes</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... placement status  /hostlers_day_scholars.csv\n",
+              "0        1      M  ...       Not placed                           d\n",
+              "1        2      F  ...           Placed                           d\n",
+              "2        3      F  ...       Not placed                           d\n",
+              "3        4      M  ...       Not placed                           d\n",
+              "4        5      M  ...       Not placed                           h\n",
+              "\n",
+              "[5 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 61
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "FA3DSkqEiazI",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "bcb0581d-4291-4696-d841-fa14846ed501"
+      },
+      "source": [
+        "del df[\"registered_for_ Placement_Training\"]\n",
+        "df.head()"
+      ],
+      "execution_count": 62,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.3</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.0</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender Section  ...  Backlogs  placement status  /hostlers_day_scholars.csv\n",
+              "0        1      M       A  ...        18        Not placed                           d\n",
+              "1        2      F       A  ...         0            Placed                           d\n",
+              "2        3      F       A  ...        13        Not placed                           d\n",
+              "3        4      M       A  ...        17        Not placed                           d\n",
+              "4        5      M       A  ...        17        Not placed                           h\n",
+              "\n",
+              "[5 rows x 9 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 62
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "L7GW4FPEkOfP",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 77
+        },
+        "outputId": "0235d61e-4227-4301-b960-e2dce33716de"
+      },
+      "source": [
+        "new_student=pd.DataFrame({\"Roll No\":[118],\"Gender\":[\"F\"],\"Section\":[\"C\"],\"SSC Percentage\":[98.4],\"inter_Diploma_percentage\":[99],\"B.Tech_percentage\":[75],\"Backlogs\":[0],\"Hostler/Day_Scholar\":[\"h\"],\"placement status\":[\"Not placed\"]},index=[117])\n",
+        "new_student"
+      ],
+      "execution_count": 69,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "      <th>placement status</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>117</th>\n",
+              "      <td>118</td>\n",
+              "      <td>F</td>\n",
+              "      <td>C</td>\n",
+              "      <td>98.4</td>\n",
+              "      <td>99</td>\n",
+              "      <td>75</td>\n",
+              "      <td>0</td>\n",
+              "      <td>h</td>\n",
+              "      <td>Not placed</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "     Roll No Gender Section  ...  Backlogs  Hostler/Day_Scholar  placement status\n",
+              "117      118      F       C  ...         0                    h        Not placed\n",
+              "\n",
+              "[1 rows x 9 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 69
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PJfSvBycoq9R",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "4dfecb0d-6ea2-4e5b-f8ea-fd6b8066224f"
+      },
+      "source": [
+        "df=df.append(new_student)\n",
+        "df.head()\n"
+      ],
+      "execution_count": 77,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.3</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.0</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... /hostlers_day_scholars.csv  Hostler/Day_Scholar\n",
+              "0        1      M  ...                          d                  NaN\n",
+              "1        2      F  ...                          d                  NaN\n",
+              "2        3      F  ...                          d                  NaN\n",
+              "3        4      M  ...                          d                  NaN\n",
+              "4        5      M  ...                          h                  NaN\n",
+              "\n",
+              "[5 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 77
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "S4_l0my-q-yC",
+        "colab_type": "text"
+      },
+      "source": [
+        "##3.4)Deleting a row"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Gy8XXLSwrnaq",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "1f4dc43c-aaa5-43b1-aa4b-7432cc702211"
+      },
+      "source": [
+        "df.drop(3).head()"
+      ],
+      "execution_count": 78,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.30</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.00</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.00</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>6</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>81.26</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>62.20</td>\n",
+              "      <td>6</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... /hostlers_day_scholars.csv  Hostler/Day_Scholar\n",
+              "0        1      M  ...                          d                  NaN\n",
+              "1        2      F  ...                          d                  NaN\n",
+              "2        3      F  ...                          d                  NaN\n",
+              "4        5      M  ...                          h                  NaN\n",
+              "5        6      M  ...                          h                  NaN\n",
+              "\n",
+              "[5 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 78
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7uq1J34nr8sN",
+        "colab_type": "text"
+      },
+      "source": [
+        "##3.5)Modyfying Elements"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "d5cRj1XmsEXM",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "b8240eef-6c85-42df-a95f-a62274b30bd8"
+      },
+      "source": [
+        "df.loc[1,\"Hostler/Day_Scholar\"]=\"h\"\n",
+        "df.head()"
+      ],
+      "execution_count": 79,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.3</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>h</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.0</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... /hostlers_day_scholars.csv  Hostler/Day_Scholar\n",
+              "0        1      M  ...                          d                  NaN\n",
+              "1        2      F  ...                          d                    h\n",
+              "2        3      F  ...                          d                  NaN\n",
+              "3        4      M  ...                          d                  NaN\n",
+              "4        5      M  ...                          h                  NaN\n",
+              "\n",
+              "[5 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 79
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "pPIluUmDsrDe",
+        "colab_type": "text"
+      },
+      "source": [
+        "##4)Applying functions on a data frame"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "eGpfhWbPs9CX",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "def give_grace(x):\n",
+        "  if x<70:\n",
+        "    return(x+0.005)\n",
+        "  else:\n",
+        "    return(x)"
+      ],
+      "execution_count": 84,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "261xW0gtuwRa",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "f273f891-f1d7-444b-b6a6-63c4d2862d9a"
+      },
+      "source": [
+        "df['B.Tech_percentage'].apply(give_grace)\n",
+        "df.head()"
+      ],
+      "execution_count": 86,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.3</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>h</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.0</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... /hostlers_day_scholars.csv  Hostler/Day_Scholar\n",
+              "0        1      M  ...                          d                  NaN\n",
+              "1        2      F  ...                          d                    h\n",
+              "2        3      F  ...                          d                  NaN\n",
+              "3        4      M  ...                          d                  NaN\n",
+              "4        5      M  ...                          h                  NaN\n",
+              "\n",
+              "[5 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 86
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "x69YcgwxvLOo",
+        "colab_type": "text"
+      },
+      "source": [
+        "##5)Iterations on DataFrame:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "77aS80LZvUho",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 101
+        },
+        "outputId": "8e0df967-eb69-43e5-e026-4e633e686427"
+      },
+      "source": [
+        "for index,rows in df[df[\"B.Tech_percentage\"]>=80].iterrows():\n",
+        "  print(rows[\"Roll No\"],\"-\",rows[\"B.Tech_percentage\"])"
+      ],
+      "execution_count": 91,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "18 - 85.39\n",
+            "60 - 81.1\n",
+            "71 - 80.47\n",
+            "97 - 88.1\n",
+            "102 - 83.38\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "XMG69cJZxOYH",
+        "colab_type": "text"
+      },
+      "source": [
+        "##6)Accessing the elements from a data frame"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "qHydZmbFxVAo",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "outputId": "5c096fe2-eedb-4091-c348-5176bbf74784"
+      },
+      "source": [
+        "df.loc[[1,2],[\"SSC Percentage\",\"inter_Diploma_percentage\"]]"
+      ],
+      "execution_count": 92,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>89.0</td>\n",
+              "      <td>92.4</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>67.0</td>\n",
+              "      <td>68.0</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   SSC Percentage  inter_Diploma_percentage\n",
+              "1            89.0                      92.4\n",
+              "2            67.0                      68.0"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 92
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KUs5WgBvyMZ5",
+        "colab_type": "text"
+      },
+      "source": [
+        "##7)Different ways to deal with NA's in dataframe"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "euJFGOF9ycCP",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "4b55673c-bcef-49d8-8d70-daf353d99d81"
+      },
+      "source": [
+        "df[\"SSC Percentage\"] = df[\"SSC Percentage\"].replace(to_replace=np.nan,value=np.mean(df[\"SSC Percentage\"]))\n",
+        "df.head()"
+      ],
+      "execution_count": 99,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.300000</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.000000</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>h</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.000000</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.000000</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>81.631048</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... /hostlers_day_scholars.csv  Hostler/Day_Scholar\n",
+              "0        1      M  ...                          d                  NaN\n",
+              "1        2      F  ...                          d                    h\n",
+              "2        3      F  ...                          d                  NaN\n",
+              "3        4      M  ...                          d                  NaN\n",
+              "4        5      M  ...                          h                  NaN\n",
+              "\n",
+              "[5 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 99
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HUKJGcwZ0e5C",
+        "colab_type": "text"
+      },
+      "source": [
+        "##8)Group by operations on dataframe"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "QT9BvS3q0paq",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 84
+        },
+        "outputId": "33207d18-a88b-41f1-d97e-6e8c028ac4cc"
+      },
+      "source": [
+        "a=df.groupby(\"Gender\")\n",
+        "a[\"B.Tech_percentage\"].agg(np.mean)"
+      ],
+      "execution_count": 100,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Gender\n",
+              "F    71.732807\n",
+              "M    56.994265\n",
+              "Name: B.Tech_percentage, dtype: float64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 100
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kD8wTCuW1OXn",
+        "colab_type": "text"
+      },
+      "source": [
+        "##9)Merging the DataFrames"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Yd0vqSv61f-L",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "a09bfb43-c811-433c-abbb-6098c265d0b3"
+      },
+      "source": [
+        "b=pd.read_csv(\"/urban_rural (1).csv\")\n",
+        "b.head()"
+      ],
+      "execution_count": 107,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Urban/Rural</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>Rural</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>6</td>\n",
+              "      <td>Rural</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>7</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>8</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Urban/Rural\n",
+              "0        1       Urban\n",
+              "1        2       Rural\n",
+              "2        6       Rural\n",
+              "3        7       Urban\n",
+              "4        8       Urban"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 107
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-GmOIT0y2tIX",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "f712221a-3a69-4cc4-872a-9a4389afeaa4"
+      },
+      "source": [
+        "b.shape"
+      ],
+      "execution_count": 108,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(117, 2)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 108
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "YzCbzck-2zV0",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 232
+        },
+        "outputId": "1e9bec7b-d1a2-4aca-d7f2-a14fd3445ff4"
+      },
+      "source": [
+        "df=pd.merge(df,b,on=\"Roll No\")\n",
+        "df.head()"
+      ],
+      "execution_count": 112,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Roll No</th>\n",
+              "      <th>Gender</th>\n",
+              "      <th>Section</th>\n",
+              "      <th>SSC Percentage</th>\n",
+              "      <th>inter_Diploma_percentage</th>\n",
+              "      <th>B.Tech_percentage</th>\n",
+              "      <th>Backlogs</th>\n",
+              "      <th>placement status</th>\n",
+              "      <th>/hostlers_day_scholars.csv</th>\n",
+              "      <th>Hostler/Day_Scholar</th>\n",
+              "      <th>Urban/Rural</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>87.300000</td>\n",
+              "      <td>65.3</td>\n",
+              "      <td>40.00</td>\n",
+              "      <td>18</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>89.000000</td>\n",
+              "      <td>92.4</td>\n",
+              "      <td>71.45</td>\n",
+              "      <td>0</td>\n",
+              "      <td>Placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>h</td>\n",
+              "      <td>Rural</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>F</td>\n",
+              "      <td>A</td>\n",
+              "      <td>67.000000</td>\n",
+              "      <td>68.0</td>\n",
+              "      <td>45.26</td>\n",
+              "      <td>13</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>71.000000</td>\n",
+              "      <td>70.4</td>\n",
+              "      <td>36.47</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>d</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>5</td>\n",
+              "      <td>M</td>\n",
+              "      <td>A</td>\n",
+              "      <td>81.631048</td>\n",
+              "      <td>65.5</td>\n",
+              "      <td>42.52</td>\n",
+              "      <td>17</td>\n",
+              "      <td>Not placed</td>\n",
+              "      <td>h</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>Urban</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   Roll No Gender  ... Hostler/Day_Scholar  Urban/Rural\n",
+              "0        1      M  ...                 NaN        Urban\n",
+              "1        2      F  ...                   h        Rural\n",
+              "2        3      F  ...                 NaN        Urban\n",
+              "3        4      M  ...                 NaN        Urban\n",
+              "4        5      M  ...                 NaN        Urban\n",
+              "\n",
+              "[5 rows x 11 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 112
+        }
+      ]
+    }
+  ]
+}
